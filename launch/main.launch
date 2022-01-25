@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="Simulator_Node" pkg="ekf_excercise" type="model.py" output="screen"/>
+	<node name="Controller_Node" pkg="ekf_excercise" type="controller.py" output="screen"/>
+	<node name="Plotter_Node" pkg="ekf_excercise" type="plotter.py" output="screen"/>
+	<node name="State_Estimation_Node" pkg="ekf_excercise" type="state_estimator.py" output="screen"/>
+    
+    <!-- Topic Parameters -->
+    <param name="gt_state_topic" value="gt_state"/>
+    <param name="noisy_state_topic" value="noisy_state"/>
+    <param name="est_state_topic" value="est_state"/>
+    <param name="controller_topic" value="controls"/>
+    
+    <!-- Noise Parameters -->
+	<param name="noise_x" value="0.5"/>
+	<param name="noise_y" value="0.5"/>
+	<param name="noise_theta" value="0.1"/>
+
+    <!-- Other Parameters -->
+	<param name="car_speed" value="3"/>
+	<param name="waypoint_proximity_threshold" value="2"/>
+
+</launch>
